@@ -42,8 +42,8 @@ icons      = []
 conditions = []
 high       = []
 low        = []
-3.times do |index|
-  index = index + 1
+4.times do |index|
+  index = index
   days       << json[index]['date']['weekday']
   icons      << json[index]['icon']
   conditions << json[index]['conditions']
@@ -76,16 +76,16 @@ def img_tag(i, x)
 end
 
 g20  = '${goto 20}'
-g130 = '${goto 130}'
+g130 = '${goto 240}'
 c0   = '${color0}'
 c60  = '${color gray60}'
 
-out =  "#{c0}Weather: #{city} ${hr 2}\n"
+out =  "#{c0}#{city} ${hr 2}\n\n"
 out << "#{g20}#{c0}Sky #{g130}#{c60}#{weather}\n"
 out << "#{g20}#{c0}Temperature #{g130}#{c60}#{temp} °C\n"
 out << "#{g20}#{c0}Humidity #{g130}#{c60}#{humidity}\n"
 out << "#{g20}#{c0}Feels like #{g130}#{c60}#{feelslike} °C\n"
-out << "#{g20}#{c0}Visibility #{g130}#{c60}#{visibility} #{distance_unit}\n"
+out << "#{g20}#{c0}Visibility #{g130}#{c60}#{visibility} #{distance_unit}\n\n"
 out << "#{g20}#{c60}#{days[0]}${goto 125}#{days[1]}${goto 230}#{days[2]}\n\n"
 out << "#{img_tag(0, 10)}#{img_tag(1, 115)}#{img_tag(2, 220)}\n\n\n"
 out << "${goto 30}#{c60}#{high[0]}/#{low[0]}°#{degree.upcase}${goto 130}#{high[1]}/#{low[1]}°#{degree.upcase}${goto 240}#{high[2]}/#{low[2]}°#{degree.upcase}"

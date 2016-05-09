@@ -32,7 +32,7 @@ class Starter
 
   def execute
     @configs.each do |config_name|
-      system("conky -c ./#{config_name}.conf")
+      system("nohup conky -c ./#{config_name}.conf")
     end
   end
 

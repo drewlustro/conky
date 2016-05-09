@@ -6,7 +6,7 @@ def smart_space(item1=nil)
   output
 end
 
-network_lines = %x(ss -ntup)
+network_lines = %x(ss -ntup4)
 network_lines = network_lines.split("\n")[1..8]
 output = ''
 

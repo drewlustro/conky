@@ -20,6 +20,6 @@ secrets['hard_drives'].each do |active_device_name, device|
     partitions << conky_partition + "\n"
   end
 
-  puts '${font Liberation Mono:bold:size=9}' + partitions.inject(:+)
+  puts '${font Input Mono:medium:size=9}' + partitions.inject(:+)
   puts "\n"
 end
